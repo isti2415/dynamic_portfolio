@@ -1,7 +1,6 @@
 import { Outfit } from 'next/font/google'
 import '@/styles/globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
-import { Metadata } from 'next'
 
 const outfit = Outfit({ subsets: ['latin'] })
 
