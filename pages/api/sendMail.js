@@ -1,8 +1,6 @@
 import nodemailer from "nodemailer";
-
 // Nodemailer configuration
 const transporter = nodemailer.createTransport({
-  service:""
   host: "live.smtp.mailtrap.io",
   port: 587,
   auth: {
@@ -11,7 +9,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-async function handler (req, res) {
+async function handler(req, res) {
   console.log(req);
   if (req.method === "POST") {
     const data = req.body;
@@ -31,6 +29,6 @@ async function handler (req, res) {
     res.status(200).json({ message: "Email sent successfully" });
   }
   res.status(500).json({ message: "Bad request" });
-};
+}
 
 export default handler;
