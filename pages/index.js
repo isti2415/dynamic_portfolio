@@ -68,6 +68,7 @@ import { Tooltip } from "@/components/ui/tooltip";
 import { TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { toast } from "sonner";
 import ProjectCard from "@/components/ProjectCard";
+import Autoplay from 'embla-carousel-autoplay';
 
 const Home = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -336,9 +337,8 @@ const Home = () => {
           <Button
             variant="ghost"
             asChild
-            className={`hover:bg-primary ${
-              activeSection === "home" && "bg-primary"
-            } rounded-none rounded-t-lg`}
+            className={`hover:bg-primary ${activeSection === "home" && "bg-primary"
+              } rounded-none rounded-t-lg`}
           >
             <Link href="#home" className="nav-link">
               <HomeIcon className="lg:mr-2" />
@@ -348,9 +348,8 @@ const Home = () => {
           <Button
             variant="ghost"
             asChild
-            className={`hover:bg-primary ${
-              activeSection === "about" && "bg-primary"
-            } rounded-none rounded-t-lg`}
+            className={`hover:bg-primary ${activeSection === "about" && "bg-primary"
+              } rounded-none rounded-t-lg`}
           >
             <Link href="#about" className="nav-link">
               <User className="lg:mr-2" />
@@ -360,9 +359,8 @@ const Home = () => {
           <Button
             variant="ghost"
             asChild
-            className={`hover:bg-primary ${
-              activeSection === "projects" && "bg-primary"
-            } rounded-none rounded-t-lg`}
+            className={`hover:bg-primary ${activeSection === "projects" && "bg-primary"
+              } rounded-none rounded-t-lg`}
           >
             <Link href="#projects" className="nav-link">
               <FolderGit className="lg:mr-2" />
@@ -643,7 +641,7 @@ const Home = () => {
               </TabsTrigger>
             </TabsList>
             <TabsContent value="javascript">
-              <Carousel className="mt-4 mx-8">
+              <Carousel className="mt-4 mx-auto lg:mx-8" opts={{ align: "start", loop: true }} plugins={[Autoplay({delay: 2000})]}>
                 <CarouselContent>
                   <ProjectCard
                     title="GardenR"
@@ -680,12 +678,12 @@ const Home = () => {
                     techStack={[Nextjs, TailwindCSS, Firebase]}
                   />
                 </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
+                <CarouselPrevious className="hidden md:flex" />
+                <CarouselNext className="hidden md:flex" />
               </Carousel>
             </TabsContent>
             <TabsContent value="php">
-              <Carousel className="mt-4 mx-8">
+              <Carousel className="mt-4 mx-auto lg:mx-8">
                 <CarouselContent>
                   <ProjectCard
                     title="BudgetBuddy"
@@ -695,12 +693,12 @@ const Home = () => {
                     techStack={[PHP, HTML5, CSS3, MySQL, TailwindCSS]}
                   />
                 </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
+                <CarouselPrevious className="hidden md:flex" />
+                <CarouselNext className="hidden md:flex" />
               </Carousel>
             </TabsContent>
             <TabsContent value="miscellenous">
-              <Carousel className="mt-4 mx-8">
+              <Carousel className="mt-4 mx-auto lg:mx-8">
                 <CarouselContent>
                   <ProjectCard
                     title="Simulating the operations at DESCO"
@@ -710,8 +708,8 @@ const Home = () => {
                     techStack={[Java]}
                   />
                 </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
+                <CarouselPrevious className="hidden md:flex" />
+                <CarouselNext className="hidden md:flex" />
               </Carousel>
             </TabsContent>
           </Tabs>

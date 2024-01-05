@@ -17,7 +17,7 @@ const ProjectCard = ({
   deploymentLink,
   techStack,
 }) => (
-  <CarouselItem>
+  <CarouselItem className="md:basis-1/2 lg:basis-1/3 flex">
     <Card>
       <CardHeader>
         <CardTitle>{title}</CardTitle>
