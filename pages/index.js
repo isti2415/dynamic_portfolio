@@ -151,7 +151,7 @@ const Home = () => {
     },
     {
       icon: <GraduationCap />,
-      text: "BSc in CSE, IUB",
+      text: "BSc in Computer Science, IUB",
     },
   ];
 
