@@ -416,7 +416,7 @@ const Home = () => {
               </Dialog>
               <a
                 target="_blank"
-                href="https://rxresu.me/istiaqahmed87/istiaqs-professional-resume"
+                href="https://rxresu.me/istiaqahmed87/istiaq-s-professional-resume"
                 rel="noopener noreferrer"
               >
                 <Button variant="secondary">
